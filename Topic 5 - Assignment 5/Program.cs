@@ -126,7 +126,7 @@
         //Mini Quiz
 
         {
-
+            Console.WriteLine("hi");
         }
 
     }
