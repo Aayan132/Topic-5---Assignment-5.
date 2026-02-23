@@ -1,6 +1,6 @@
-﻿﻿namespace Assignment_5___If_statements
+﻿namespace Assignment_5___If_statements
 {
-    internal class Program 
+    internal class Program
     {
         static void Main(string[] args)
         {
@@ -37,7 +37,7 @@
                 double.TryParse(Console.ReadLine(), out number2);
             }
 
-            
+
 
             if (mathoperator == "+")
             {
@@ -122,12 +122,124 @@
             }
         }
 
-            public static void Miniquiz()
+        public static void Miniquiz()
         //Mini Quiz
 
         {
-            Console.WriteLine("hi");
+            int score = 0;
+            int totalquestions = 4;
+
+            Console.WriteLine("Welcome to my mini quiz");
+            Console.WriteLine();
+
+            Console.WriteLine("Question 1: What's 9 x 9?");
+            int q1;
+            Int32.TryParse(Console.ReadLine(), out q1);
+
+            if (q1 == 81)
+            {
+                Console.WriteLine("Correct!");
+                score = score + 1;
+            }
+            else if (q1 < 81)
+            {
+                Console.WriteLine("Incorrect, too low.");
+            }
+            else
+            {
+                Console.WriteLine("Incorrect, too high.");
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine("Question 2: Enter a temperature in Celsius where water is liquid.");
+            double temp;
+            double.TryParse(Console.ReadLine(), out temp);
+
+            if (temp >= 0 && temp <= 99)
+            {
+                Console.WriteLine("Correct!");
+                score = score + 1;
+            }
+            else if (temp <= 0)
+            {
+                Console.WriteLine("Incorrect, that is freezing or below.");
+            }
+            else
+            {
+                Console.WriteLine("Incorrect, that is boiling or above.");
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine("Question 3: What planet do we live on?");
+            string planet = Console.ReadLine();
+            planet = planet.ToUpper();
+
+            if (planet == "EARTH")
+            {
+                Console.WriteLine("Correct!");
+                score = score + 1;
+            }
+            else
+            {
+                Console.WriteLine("Incorrect, the answer is Earth.");
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine("Question 4: Which one is a primary color?");
+            Console.WriteLine("A. Green");
+            Console.WriteLine("B. Purple");
+            Console.WriteLine("C. Blue");
+            Console.WriteLine("D. Pink");
+
+            string choice = Console.ReadLine();
+            choice = choice.ToUpper();
+
+            if (choice == "C")
+            {
+                Console.WriteLine("Correct!");
+                score = score + 1;
+            }
+            else if (choice == "A")
+            {
+                Console.WriteLine("Incorrect, green is made from blue and yellow.");
+            }
+            else if (choice == "B")
+            {
+                Console.WriteLine("Incorrect, purple is made from red and blue.");
+            }
+            else if (choice == "D")
+            {
+                Console.WriteLine("Incorrect, pink is a shade of red.");
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice.");
+            }
+
+            Console.WriteLine();
+
+            double percent = (double)score / totalquestions * 100;
+
+            Console.WriteLine("You got " + score + " out of " + totalquestions + ".");
+            Console.WriteLine("That is a score of " + percent + " percent.");
+
+            if (score == 0)
+            {
+                Console.WriteLine("You got 0. Try again!");
+            }
+            else if (score == totalquestions)
+            {
+                Console.WriteLine("Perfect score!");
+            }
+            else
+            {
+                Console.WriteLine("Good job!");
+            }
         }
 
     }
+
 }
